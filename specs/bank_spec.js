@@ -34,7 +34,7 @@ describe('Bank', function() {
     assert.deepEqual(bank.largestAccount(), account3);
   });
 
-  xit("should be able to add 10% interest to all accounts", function() {
+  it("should be able to add 10% interest to all accounts", function() {
     var interestPaid1 = new Account("Ally", 66, 'personal');
     var interestPaid2 = new Account("Alan", 11, 'business');
     var interestPaid3 = new Account("Upul", 88, 'personal');

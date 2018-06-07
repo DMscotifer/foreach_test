@@ -28,4 +28,12 @@ Bank.prototype.largestAccount = function() {
   return result;
 }
 
+Bank.prototype.payInterest = function() {
+  var interest = 0;
+  this.accounts.forEach(function(account){
+    interest = account.value * 0.1;
+    account.value += interest;
+  })
+}
+
 module.exports = Bank;
