@@ -36,4 +36,14 @@ Bank.prototype.payInterest = function() {
   })
 }
 
+Bank.prototype.businessAccounts = function() {
+  let result = [];
+  this.accounts.forEach(function(account){
+    if(account.type === "business"){
+      result.push(account);
+    }
+  })
+  return result;
+}
+
 module.exports = Bank;

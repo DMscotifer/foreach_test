@@ -46,7 +46,7 @@ describe('Bank', function() {
     assert.deepStrictEqual(bank.accounts, expected)
   });
 
-  xit("should be able to return all business accounts", function() {
+  it("should be able to return all business accounts", function() {
     assert.deepStrictEqual(bank.businessAccounts(), [account2, account4]);
   });
 
