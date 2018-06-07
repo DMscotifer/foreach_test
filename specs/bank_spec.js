@@ -50,11 +50,11 @@ describe('Bank', function() {
     assert.deepStrictEqual(bank.businessAccounts(), [account2, account4]);
   });
 
-  xit("should be able to find total value of all acounts", function() {
+  it("should be able to find total value of all acounts", function() {
     assert.strictEqual(bank.totalValue(), 155);
   });
 
-  xit("should be able to find the average value of accounts", function() {
+  it("should be able to find the average value of accounts", function() {
     assert.strictEqual(bank.averageValue(), 38.75);
   });
 

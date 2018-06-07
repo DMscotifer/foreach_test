@@ -46,4 +46,12 @@ Bank.prototype.businessAccounts = function() {
   return result;
 }
 
+Bank.prototype.totalValue = function() {
+  var result = 0;
+  this.accounts.forEach(function(account) {
+    result += account.value;
+  })
+  return result;
+}
+
 module.exports = Bank;
