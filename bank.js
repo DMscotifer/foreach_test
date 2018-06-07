@@ -16,16 +16,41 @@ Bank.prototype.accountByName = function(custName) {
   return result;
 }
 
+// Bank.prototype.accountByName = function(name){
+//   return this.accounts.filter(function(account){
+//     return account.name === name;
+//   })[0];
+// }
+
+// Bank.prototype.accountByName = function(name) {
+//   return this.accounts.find((account) => {
+//     return account.name === name
+//   });
+// }
+
+// Bank.prototype.accountByName = function(name) {
+// return this.accounts.find(function(account) {
+//   return account.name === name
+// });
+// }
+
+// Bank.prototype.largestAccount = function() {
+//   let result;
+//   var maximum = 0;
+//   this.accounts.forEach(function(account){
+//   if(account.value > maximum) {
+//     maximum = account.value;
+//     result = account;
+//   }
+//   });
+//   return result;
+// }
+
 Bank.prototype.largestAccount = function() {
-  let result;
-  var maximum = 0;
-  this.accounts.forEach(function(account){
-  if(account.value > maximum) {
-    maximum = account.value;
-    result = account;
-  }
-  });
-  return result;
+  this.accounts.sort(function(a, b) {
+    return b.value - a.value;
+  })
+  return this.accounts[0];
 }
 
 Bank.prototype.payInterest = function() {
@@ -46,13 +71,19 @@ Bank.prototype.businessAccounts = function() {
   return result;
 }
 
+// Bank.prototype.totalValue = function() {
+//   var result = 0;
+//   this.accounts.forEach(function(account) {
+//     result += account.value;
+//   })
+//   return result;
+// }
+
 Bank.prototype.totalValue = function() {
-  var result = 0;
-  this.accounts.forEach(function(account) {
-    result += account.value;
-  })
-  return result;
-}
+  return this.accounts.reduce(function(sum, account){
+    return sum + account.value;
+  }, 0);
+};
 
 Bank.prototype.averageValue = function() {
   var result = this.totalValue() / this.accounts.length;;
